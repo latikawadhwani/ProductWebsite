@@ -1,0 +1,22 @@
+﻿@model demo.Models.Category
+
+@{
+    ViewBag.Title = "Browse Category";
+
+}
+
+<h3 class="htext"><em>@Model.CategoryName</em></h3>
+<ul id="product-list">
+    @foreach (var product in Model.Products)
+    {
+        var imageUrl = product.ProductImageURL;
+        <li>
+            <a class="anchor" href="@Url.Action("Details",new{id=product.ProductID})" target="_blank">
+
+                <img alt="@product.Name" src="@imageUrl" /><br />
+
+                <span class="anchor">@product.Name</span>
+            </a>
+        </li>
+    }
+</ul>

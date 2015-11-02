@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/css")
+
+    <link href="~/Content/layout.css" rel="stylesheet" />
+
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="header" class="header">
+        <div class="header-left">
+            <a href="/"><img src="~/Content/Images/logo.jpg" width="100" height="100" /></a>
+            <div class="ptext"><a href="/">Product Catalog</a></div>
+        </div>
+        <div class="header-right">
+            <ul id="navlist">
+                <li class="first"><a href="/" id="curent">Home</a></li>
+                <li><a href="/Store/">Store</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="body-left">
+            @{Html.RenderAction("CategoryMenu", "Store");}
+        </div>
+        <div class="body-right">
+            @RenderBody()
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/app/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<demo.Models.Category>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+<h3 class="htext">Browse Category</h3>
+<p class="normtext">Select categories from left:</p>
+
+
+@*@foreach (var category in Model)
+{
+    <div class="category">
+        @Html.ActionLink(category.CategoryName, "Browse", new { CategoryName = category.CategoryName })
+    </div>
+}*@

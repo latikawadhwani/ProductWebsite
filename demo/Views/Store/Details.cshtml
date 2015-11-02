@@ -1,0 +1,11 @@
+﻿@model demo.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h1> @Model.Name</h1>
+<img src="@Model.ProductImageURL" /><br /><br />
+<span class="details">Sold By</span> <span class="anchor"> @Model.Company.CompanyName<br /><br /></span>
+    <span class="details">Price </span><span class="anchor"> @Model.Price<br /><br />
+@Model.Description</span>
